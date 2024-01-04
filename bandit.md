@@ -16,27 +16,39 @@ cat .hidden
 cat ./-file07 (./ para evitar que lo interprete como comando)
 lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
 
-//bandit5
+## Bandit 5
+```bash
 find . -size 1033c
 ./maybehere07/.file2
 cat ./maybehere07/.file2
 P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+```
 
-//bandit6
+
+## Bandit 6
+```bash
 find . -size 33c -user bandit7 -group bandit6
 ./var/lib/dpkg/info/bandit7.password
 z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+```
 
-//bandit7
+## Bandit 7
+```bash
 grep -e millionth data.txt
 TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+```
 
-//bandit8
+## Bandit 8
+```bash
 sort data.txt | uniq --unique
 EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+```
 
-//bandit9
+## Bandit 9
+```bash
 (es que he hecho un cat del fichero y me ha salido la pwd en la cara)
 G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+```
 
-//bandit10
+
+## Bandit 10
