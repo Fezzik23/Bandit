@@ -85,4 +85,35 @@ G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
 The password for the next level is stored in the file data.txt, which contains base64 encoded data
 ```bash
 ssh -p 2220 bandit10@bandit.labs.overthewire.org
+base64 -d data.txt
+6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+```
+## Bandit 11
+The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+```bash
+ssh -p 2220 bandit11@bandit.labs.overthewire.org
+cat data.txt | tr [a-z] [n-za-m] | tr [A-Z] [N-ZA-M]
+JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+```
+## Bandit 12
+The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. 
+For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!) [grep, sort, uniq, strings, base64, tr, tar, gzip, bzip2, xxd, mkdir, cp, mv, file]
+```bash
+ssh -p 2220 bandit11@bandit.labs.overthewire.org
+cp data.txt /tmp/sergio123
+cd /tmp/sergio123
+mv data.txt dataOK.txt
+xxd -r dataOK.txt > dataOK.bin
+mv dataOK.bin dataOK.bin.gz
+gzip -d dataOK.bin.gz
+bzip2 -d dataOK.bin
+mv dataOK.bin.out data4.bin.gz
+gzip -d data4.bin.gz
+tar -xvf data4.bin
+tar -xvf data5.bin
+tar -xvf data6.bin.out
+mv data8.bin data8.bin.gz
+gzip -d data8.bin.gz
+cat data8.bin
+wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
 ```
